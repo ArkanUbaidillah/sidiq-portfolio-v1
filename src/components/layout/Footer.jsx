@@ -1,4 +1,5 @@
-import { Github, Instagram, MessageCircle } from 'lucide-react'
+import { Github, Instagram, MessageCircle, Lock } from "lucide-react"; // tambah Lock
+import { Link } from "react-router-dom"; // baris baru
 
 export default function Footer() {
   return (
@@ -12,8 +13,8 @@ export default function Footer() {
           height="100%"
           style={{
             border: 0,
-            filter: 'grayscale(1) invert(1) opacity(0.7)',
-            display: 'block',
+            filter: "grayscale(1) invert(1) opacity(0.7)",
+            display: "block",
           }}
           allowFullScreen=""
           loading="lazy"
@@ -63,14 +64,22 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-2">
-          <p className="text-white/20 text-xs font-mono">
-            © {new Date().getFullYear()} Muhamad Sidiq · 2411533011
-          </p>
-          <p className="text-white/20 text-xs font-mono">
-            Built with <span className="text-emerald-400">React</span> + <span className="text-emerald-400">Supabase</span>
-          </p>
+          <div className="flex items-center gap-3">
+            {" "}
+            {/* ← <p> diganti <div> */}
+            <p className="text-white/20 text-xs font-mono">
+              © 2025 Muhamad Sidiq · 2411533011
+            </p>
+            <Link
+              to="/sidiq-admin"
+              title="Admin Panel"
+              className="w-6 h-6 rounded-md border border-white/8 flex items-center justify-center text-white/15 hover:text-emerald-400 hover:border-emerald-500/30 transition-all"
+            >
+              <Lock size={11} />
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
